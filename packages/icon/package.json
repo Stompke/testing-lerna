@@ -15,5 +15,8 @@
   ],
   "scripts": {
     "test": "node ./__tests__/icon.test.js"
+  },
+  "devDependencies": {
+    "button": "^1.0.0"
   }
 }
