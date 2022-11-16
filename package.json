@@ -1,6 +1,10 @@
 {
   "name": "root",
   "private": true,
+  "repository": {
+    "url": "https://github.com/Stompke/testing-lerna",
+    "type": "git"
+  },
   "workspaces": [
     "packages/*"
   ],
