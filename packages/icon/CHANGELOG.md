@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0-alpha.0](https://github.com/Stompke/testing-lerna/compare/icon@2.1.2-alpha.0...icon@2.2.0-alpha.0) (2022-11-16)
+
+
+### Features
+
+* **icon:** some changes. ([ca132af](https://github.com/Stompke/testing-lerna/commit/ca132aff14994c375a99d22c5a4ce79662501f00))
+
+
+
+
+
 ## [2.1.2-alpha.0](https://github.com/Stompke/testing-lerna/compare/icon@2.1.1...icon@2.1.2-alpha.0) (2022-11-16)
 
 **Note:** Version bump only for package icon
