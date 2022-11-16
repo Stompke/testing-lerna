@@ -1,0 +1,19 @@
+{
+  "name": "icon",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Shawn Tompke <shawntompke@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/icon.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/icon.test.js"
+  }
+}
