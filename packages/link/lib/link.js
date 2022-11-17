@@ -7,5 +7,5 @@ module.exports = link;
 // comment here
 
 function link() {
-    return "Hello from link, fstff in hereeature on link this is a fixed a bug and some stuff added some features";
+    return "Hasdfllo from link, fstff in hereeature on link this is a fixed a bug and some stuff added some features";
 }
