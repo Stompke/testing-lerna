@@ -12,7 +12,12 @@ DEV -> NEXT -> MAIN
 - Create PR from NEXT into MAIN ( This does a graduate & creates a release )
 
 
+
 # Commands
+
+npx lerna version --conventional-commits --conventional-prerelease  --no-private --exact 
+
+npx lerna version --conventional-commits --conventional-graduate --create-release -m "chore(release): publish" --no-private --exact
 
 
 # When versioning packages independently, no placeholders are replaced
