@@ -37,7 +37,7 @@ npx lerna exec --concurrency 1 --stream -- 'conventional-changelog --preset angu
 
 # Scenarios
 
-## Changes ONLY made to link icon (not dependant & no dependencies)
+## TRY #1 Changes ONLY made to link icon (not dependant & no dependencies)
 
 > Changes to link.js
 > git commit -m 'feat(link): Added new text to link.'
@@ -56,4 +56,8 @@ npx lerna exec --concurrency 1 --stream -- 'conventional-changelog --preset angu
 ..... GIT said bad credentials & didnt create release tag, but it still changed versions and created a tag. 
 
 Made the tag a release manually
+
+
+
+## TRY #2 Changes ONLY made to link icon (not dependant & no dependencies)
 
