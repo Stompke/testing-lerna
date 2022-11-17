@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0-alpha.0](https://github.com/Stompke/testing-lerna/compare/link@1.4.0...link@1.5.0-alpha.0) (2022-11-17)
+
+
+### Features
+
+* **link:** Added new text features on link. ([#14](https://github.com/Stompke/testing-lerna/issues/14)) ([98e016e](https://github.com/Stompke/testing-lerna/commit/98e016ef4c9ffa402b620cea85973b4ab5761d13))
+
+
+
+
+
 # [1.4.0](https://github.com/Stompke/testing-lerna/compare/link@1.3.0...link@1.4.0) (2022-11-17)
 
 
