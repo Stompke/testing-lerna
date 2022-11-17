@@ -17,8 +17,10 @@ DEV -> NEXT -> MAIN
 
 ## On PR closed/merged into NEXT branch
 npx lerna version --conventional-commits --conventional-prerelease -m "chore(release): pre-release"  --no-private --exact 
+npx lerna version --conventional-commits --conventional-prerelease -m "chore(release): pre-release"  --no-private --exact 
 
 ## on PR closed/merged into MAIN
+GH_TOKEN=MYTOKEN npx lerna version --conventional-commits --conventional-graduate --create-release github -m "chore(release): publish" --no-private --exact
 GH_TOKEN=MYTOKEN npx lerna version --conventional-commits --conventional-graduate --create-release github -m "chore(release): publish" --no-private --exact
 
 
