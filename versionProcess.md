@@ -15,10 +15,14 @@ DEV -> NEXT -> MAIN
 
 # Commands
 
+## On PR closed/merged into NEXT branch
 npx lerna version --conventional-commits --conventional-prerelease  --no-private --exact 
 
-npx lerna version --conventional-commits --conventional-graduate --create-release -m "chore(release): publish" --no-private --exact
+## on PR closed/merged into MAIN
+GH_TOKEN=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 npx lerna version --conventional-commits --conventional-graduate --create-release github -m "chore(release): publish" --no-private --exact
 
+
+# Other Commands 
 
 # When versioning packages independently, no placeholders are replaced
 lerna version -m "chore(release): publish"
