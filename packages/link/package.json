@@ -1,0 +1,26 @@
+{
+  "name": "link",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "GitHub Action <action@github.com>",
+  "homepage": "https://github.com/Stompke/testing-lerna#readme",
+  "license": "ISC",
+  "main": "lib/link.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stompke/testing-lerna.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/link.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Stompke/testing-lerna/issues"
+  }
+}
