@@ -1,6 +1,6 @@
 {
   "name": "link",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "> TODO: description",
   "author": "GitHub Action <action@github.com>",
   "homepage": "https://github.com/Stompke/testing-lerna#readme",

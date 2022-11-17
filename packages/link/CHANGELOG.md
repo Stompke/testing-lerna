@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/Stompke/testing-lerna/compare/link@1.2.1...link@1.3.0) (2022-11-17)
+
+
+### Bug Fixes
+
+* **link:** Added text to fix a bug. ([#9](https://github.com/Stompke/testing-lerna/issues/9)) ([e500143](https://github.com/Stompke/testing-lerna/commit/e500143c840baf0d439489535ef674e064263451))
+
+
+### Features
+
+* **link:** Added things to link ([#8](https://github.com/Stompke/testing-lerna/issues/8)) ([a33a7b7](https://github.com/Stompke/testing-lerna/commit/a33a7b7f32a588b05b17443be3d0dcb7a9c01c5b))
+
+
+
+
+
 ## [1.2.1](https://github.com/Stompke/testing-lerna/compare/link@1.2.1-alpha.0...link@1.2.1) (2022-11-17)
 
 **Note:** Version bump only for package link
