@@ -17,11 +17,11 @@ DEV -> NEXT -> MAIN
 
 ## On PR closed/merged into NEXT branch
 npx lerna version --conventional-commits --conventional-prerelease -m "chore(release): pre-release"  --no-private --exact 
-npx lerna version --conventional-commits --conventional-prerelease -m "chore(release): pre-release"  --no-private --exact 
+
 
 ## on PR closed/merged into MAIN
 GH_TOKEN=MYTOKEN npx lerna version --conventional-commits --conventional-graduate --create-release github -m "chore(release): publish" --no-private --exact
-GH_TOKEN=MYTOKEN npx lerna version --conventional-commits --conventional-graduate --create-release github -m "chore(release): publish" --no-private --exact
+
 
 
 # Other Commands 
@@ -63,3 +63,27 @@ Made the tag a release manually
 
 ## TRY #2 Changes ONLY made to link icon (not dependant & no dependencies)
 
+> branch fix/link
+> changes to link.js
+> commit -m 'fix(link): stuff'
+> PR squash merged into master w/ bug label
+> back to master and run
+> npx lerna version --conventional-commits --conventional-prerelease -m "chore(release): pre-release"  --no-private --exact 
+    Changes:
+    - link: 1.2.0 => 1.2.1-alpha.0
+> GH_TOKEN=MYTOKEN npx lerna version --conventional-commits --conventional-graduate --create-release github -m "chore(release): publish" --no-private --exact
+    Changes:
+    - link: 1.2.1-alpha.0 => 1.2.1
+> Made a release tag w/ these comments in the body (lame)
+    1.2.1 (2022-11-17)
+    Note: Version bump only for package link
+> and change log looks like this
+    Change Log
+    All notable changes to this project will be documented in this file. See Conventional Commits for commit guidelines.
+
+    1.2.1 (2022-11-17)
+    Note: Version bump only for package link
+
+    1.2.1-alpha.0 (2022-11-17)
+    Bug Fixes
+    link: (#7) (7c8993e)
