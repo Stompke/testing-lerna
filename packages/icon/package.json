@@ -1,6 +1,6 @@
 {
   "name": "icon",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "> TODO: description",
   "author": "Shawn Tompke <shawntompke@gmail.com>",
   "homepage": "",
@@ -17,6 +17,6 @@
     "test": "node ./__tests__/icon.test.js"
   },
   "devDependencies": {
-    "button": "^2.1.1"
+    "button": "2.2.0"
   }
 }
