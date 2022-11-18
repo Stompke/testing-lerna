@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/Stompke/testing-lerna/compare/shawn-sea-animals@1.2.0...shawn-sea-animals@1.3.0) (2022-11-18)
+
+
+### Features
+
+* **shawn-sea-animals:** Added some comments. feat change. ([#23](https://github.com/Stompke/testing-lerna/issues/23)) ([#24](https://github.com/Stompke/testing-lerna/issues/24)) ([21a6840](https://github.com/Stompke/testing-lerna/commit/21a6840c9d89c836f8c80f8e8a011082a5aed831))
+
+
+
+
+
 # [1.2.0](https://github.com/Stompke/testing-lerna/compare/shawn-sea-animals@1.1.1...shawn-sea-animals@1.2.0) (2022-11-18)
 
 
