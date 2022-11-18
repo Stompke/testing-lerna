@@ -22,5 +22,8 @@
   },
   "bugs": {
     "url": "https://github.com/Stompke/testing-lerna/issues"
+  },
+  "devDependencies": {
+    "shawns-ocean-test": "1.0.0"
   }
 }
