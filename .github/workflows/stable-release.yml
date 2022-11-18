@@ -42,6 +42,7 @@ jobs:
           npx lerna version --conventional-commits --create-release github -m "chore(release): publish" --no-private --exact --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{secrets.GIT_TOKEN}}
       - name: Publish Stable Release to NPM
         run: |
           git config --local user.email "action@github.com"
