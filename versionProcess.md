@@ -1,5 +1,9 @@
 # Versioning Process
 
+
+# ideas
+- i think you can publish alpha without creating tags using `lerna publish --canary`
+
 # Branches
 
 DEV -> NEXT -> MAIN
@@ -15,12 +19,25 @@ DEV -> NEXT -> MAIN
 
 # Commands
 
-## On PR closed/merged into NEXT branch
-npx lerna version --conventional-commits --conventional-prerelease -m "chore(release): pre-release"  --no-private --exact 
+1
+## Publish Canary (alpha) build w/o adding git tag or changing package.json
+### Publish canary (alpha) to npm
+npx lerna publish --conventional-commits --canary
 
-
+2
 ## on PR closed/merged into MAIN
-GH_TOKEN=MYTOKEN npx lerna version --conventional-commits --conventional-graduate --create-release github -m "chore(release): publish" --no-private --exact
+### Bump lerna version & create github release tag
+GH_TOKEN=MYTOKEN npx lerna version --conventional-commits --create-release github -m "chore(release): publish" --no-private --exact
+
+3
+## on PR closed/merged into MAIN
+### Publish new stable build to NPM
+npx lerna publish from-package --conventional-commits
+
+
+
+    
+
 
 
 
@@ -87,3 +104,82 @@ Made the tag a release manually
     1.2.1-alpha.0 (2022-11-17)
     Bug Fixes
     link: (#7) (7c8993e)
+
+
+## TRY #3 Changes ONLY made to link icon (not dependant & no dependencies)  w/ NO ALPHA STUFF (see if changelogs & release tags look better)
+
+
+
+> branch feat/link
+> git commit -m 'feat(link): added features to link.'
+> Squashed feat/link PR w/ enhancement tag
+> Squashed fix/link PR w/ bug tag
+> GH_TOKEN=MYTOKEN npx lerna version --conventional-commits --create-release github -m "chore(release): publish" --no-private --exact
+    Changes:
+    - link: 1.2.1 => 1.3.0
+> Link changelog looks good 👍
+    Change Log
+    All notable changes to this project will be documented in this file. See Conventional Commits for commit guidelines.
+
+    1.3.0 (2022-11-17)
+    Bug Fixes
+    link: Added text to fix a bug. (#9) (e500143)
+    Features
+    link: Added things to link (#8) (a33a7b7)
+> RELEASE TAG looks good 👍
+    link@1.3.0 Latest
+
+    1.3.0 (2022-11-17)
+    Bug Fixes
+    link: Added text to fix a bug. (#9) (e500143)
+    Features
+    link: Added things to link (#8) (a33a7b7)
+
+
+## TRY #3 Changes to Link & Button  w/ NO ALPHA STUFF (see if changelogs & release tags look better)
+
+> changes on feat/link-newthings and merged into master
+> changes on fix/link-stuff and merged into master
+> changes on feat/button-things and merged into master
+> Create a release (skipping pre-release)
+> GH_TOKEN=MYTOKEN npx lerna version --conventional-commits --create-release github -m "chore(release): publish" --no-private --exact
+
+> version changed on: 
+    link
+    button
+    icon
+
+> Created Good changelogs 👍
+> Created good release tags 👍
+
+
+
+## TRY #5 using try using pre-releases
+> changes, commit and git push origin feat/new-stuff-on-link & merged into master
+> 
+
+
+
+
+## try #6 skip pre release changelogs
+
+> feat/button
+> merged into master
+> npx lerna version --conventional-commits --conventional-prerelease -m "chore(release): pre-release" --no-changelog  --no-private --exact
+    Changes:
+    - button: 2.2.0 => 2.3.0-alpha.0
+    - icon: 2.2.1 => 2.2.2-alpha.0
+> git tags were made but no changelogs were modified
+> GH_TOKEN=MYTOKEN npx lerna version --conventional-commits --conventional-graduate --create-release github -m "chore(release): publish" --no-private --exact
+    Changes:
+    - button: 2.3.0-alpha.0 => 2.3.0
+    - icon: 2.2.2-alpha.0 => 2.2.2
+> versioning worked, but since changelogs were skipped on pre-release (2.3.0-alpha.0), no changes were shown in  changelog files.
+
+## try #7 skip pre release changelogs and git tags
+
+> feat/link-stuff branch merged into master
+> lerna publish --canary
+    Found 1 package to publish:
+    - link => 1.5.1-alpha.3+cb1d9da
+> my npm not setup
