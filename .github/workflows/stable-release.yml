@@ -38,13 +38,13 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          npx lerna version --conventional-commits --create-release github -m "chore(release): publish" --no-private --exact
+          npx lerna version --conventional-commits --create-release github -m "chore(release): publish" --no-private --exact --yes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish Stable Release to NPM
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          npx lerna publish from-package --conventional-commits
+          npx lerna publish from-package --conventional-commits --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
