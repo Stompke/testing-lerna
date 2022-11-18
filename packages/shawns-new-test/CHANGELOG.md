@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/Stompke/testing-lerna/compare/shawns-new-test@1.3.2...shawns-new-test@1.4.0) (2022-11-18)
+
+
+### Features
+
+* **shawns-new-test:** added more stuff that is a feature. ([#33](https://github.com/Stompke/testing-lerna/issues/33)) ([#34](https://github.com/Stompke/testing-lerna/issues/34)) ([b178483](https://github.com/Stompke/testing-lerna/commit/b17848329c3f26cf5a603d960d84eb2203fb122a))
+
+
+
+
+
 ## [1.3.2](https://github.com/Stompke/testing-lerna/compare/shawns-new-test@1.3.1...shawns-new-test@1.3.2) (2022-11-18)
 
 
