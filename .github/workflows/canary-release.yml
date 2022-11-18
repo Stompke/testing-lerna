@@ -8,8 +8,8 @@ on:
       - next
 
 jobs:
-  build:
-    if: github.event.inputs.forcePublish == 'false'
+
+  publish-npm:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,13 +27,6 @@ jobs:
         run: npm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  publish-npm:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Install dependencies
         run: npm install 
