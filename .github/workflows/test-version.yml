@@ -1,15 +1,10 @@
-name: Publish Alpha Version
+name: Test lerna version
 
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - master
+  workflow_dispatch:
 
 jobs:
   publish-npm:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,6 +37,7 @@ jobs:
           npx lerna version --conventional-commits --create-release github -m "chore(release): publish" --no-private --exact --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{secrets.GIT_TOKEN}}
       - name: Publish Stable Release to NPM
         run: |
