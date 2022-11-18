@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/Stompke/testing-lerna/compare/shawn-sea-animals@1.3.2...shawn-sea-animals@1.4.0) (2022-11-18)
+
+
+### Features
+
+* **shawn-sea-animals:** Feature adding octopus ([16b3dd4](https://github.com/Stompke/testing-lerna/commit/16b3dd4900ac22649bce4c7135ca5fa67b63124e))
+
+
+
+
+
 ## [1.3.2](https://github.com/Stompke/testing-lerna/compare/shawn-sea-animals@1.3.1...shawn-sea-animals@1.3.2) (2022-11-18)
 
 **Note:** Version bump only for package shawn-sea-animals
