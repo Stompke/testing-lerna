@@ -16,5 +16,5 @@ module.exports = shawnsNewTest;
 
 
 function shawnsNewTest() {
-    return "Hello from shawnozeestestNewTest new stuff here";
+    return "Hello from maggieshawnstestNewTest new stuff here";
 }
