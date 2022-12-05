@@ -39,5 +39,5 @@ jobs:
         run: echo "${{ steps.random-color-generator2.outputs.SELECTED_COLOR }}"
         
       - name: They matched!
-        if: steps.random-color-generator2.outputs.SELECTED_COLOR == $(npx lerna list -l)
+        if: $steps.random-color-generator2.outputs.SELECTED_COLOR == $(npx lerna list -l)
         run: echo "THEY MATCHED!"
