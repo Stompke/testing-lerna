@@ -43,9 +43,4 @@ jobs:
         uses: ./.github/actions/lint
         with:
           project: ${{ steps.project-name.outputs.group1 }}
-      - name: Get Affected Changed and Test
-        if: ${{ steps.project-name.outputs.group1 != '' }}
-        id: unit-test
-        uses: ./.github/actions/unit-test
-        with:
-          project: ${{ steps.project-name.outputs.group1 }}
+
