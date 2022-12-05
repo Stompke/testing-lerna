@@ -23,3 +23,7 @@ runs:
       with:
         project: '${{ inputs.project }}'
         gitflow: true
+    - name: print ${{ steps.affected.outputs.affectedDeps }}
+      run: |
+        echo "${{ steps.affected.outputs.affectedDeps }}"
+      shell: bash
