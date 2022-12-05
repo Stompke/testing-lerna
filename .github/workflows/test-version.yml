@@ -41,6 +41,9 @@ jobs:
       - name: SHOW VERSIONS
         run: echo "${{ steps.random-color-generator2.outputs.SELECTED_COLOR }}"
         
+      - name: lerna version change
+        run: npx lerna version --yes
+        
       - name: They matched!
         if: ${{steps.random-color-generator2.outputs.SELECTED_COLOR}} == $(npx lerna list -l)
         run: echo "THEY MATCHED!"
