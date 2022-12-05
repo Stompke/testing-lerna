@@ -1,0 +1,25 @@
+name: Get Affected Dependencies
+
+description: Get Affected Dependencies
+
+inputs:
+  project:
+    description: 'The project to get affected dependencies for'
+    required: true
+
+outputs:
+  affectedDeps:
+    description: 'The affected dependencies'
+    value: ${{ steps.affected.outputs.affectedDeps }}
+  isAffected:
+    description: 'Whether the project is affected'
+    value: ${{ steps.affected.outputs.isAffected }}
+
+runs:
+  using: composite
+  steps:
+    - uses: leanix/nx-affected-dependencies-action@v0.2.1
+      id: affected
+      with:
+        project: '@aileron/${{ inputs.project }}'
+        gitflow: true
