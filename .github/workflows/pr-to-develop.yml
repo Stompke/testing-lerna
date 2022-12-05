@@ -14,10 +14,24 @@ jobs:
         with:
           fetch-depth: 0
           ref: "refs/pull/${{ github.event.number }}/merge"
-#       - uses: actions/setup-node@v3
-#         with:
-#           node-version-file: '.nvmrc'
-#           cache: 'npm'
+      - name: Configure NPM Registry (Artifactory)
+        run: |
+          npm set always-auth true
+          npm set email shawntompke@gmail.com
+          npm i -g npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Install dependencies
+        run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies
+        run: npm install 
+      - name: setup nvmrc
+        run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - id: project-name
         uses: actions-ecosystem/action-regex-match@v2
         with:
