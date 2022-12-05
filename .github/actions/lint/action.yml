@@ -1,0 +1,20 @@
+name: Lint
+
+description: Lint the project
+
+inputs:
+  project:
+    description: 'The project to lint'
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - uses: ./.github/actions/get-affected
+      id: get_affected
+      with:
+        project: ${{ inputs.project }}
+    - if: ${{steps.get_affected.outputs.isAffected == 'true'}}
+      run: |
+        npx nx run-many --target=lint --projects=${{ steps.get_affected.outputs.affectedDeps }}
+      shell: bash
