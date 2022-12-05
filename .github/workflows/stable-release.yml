@@ -67,11 +67,11 @@ jobs:
         run: echo "${{ steps.after-versions.outputs.VERSIONS }}"
           
       - name: They matched!
-        if: ${{steps.random-color-generator2.outputs.SELECTED_COLOR}} == ${{steps.after-versions.outputs.VERSIONS}}
+        if: ${{steps.random-color-generator2.outputs.SELECTED_COLOR == steps.after-versions.outputs.VERSIONS}}
         run: echo "THEY MATCHED!"        
         
       - name: They DIDNT match!
-        if: ${{steps.random-color-generator2.outputs.SELECTED_COLOR}} != ${{steps.after-versions.outputs.VERSIONS}}
+        if: ${{steps.random-color-generator2.outputs.SELECTED_COLOR != steps.after-versions.outputs.VERSIONS}}
         run: echo "THEY DID NOT MATCH!"        
 
       - name: Publish Stable Release to NPM
