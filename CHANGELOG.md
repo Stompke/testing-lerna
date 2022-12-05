@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.2.0](https://github.com/Stompke/testing-lerna/compare/v9.1.4...v9.2.0) (2022-12-05)
+
+
+### Features
+
+* **shawns-new-test:** added features ([565a4c0](https://github.com/Stompke/testing-lerna/commit/565a4c0bd90b8bb930c630198944caaf1e3e827e))
+
+
+
+
+
 ## [9.1.4](https://github.com/Stompke/testing-lerna/compare/v9.1.3...v9.1.4) (2022-12-05)
 
 **Note:** Version bump only for package root
