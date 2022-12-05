@@ -56,12 +56,22 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{secrets.GIT_TOKEN}}
           
+      - name: Set after version history
+        id: after-versions
+        run: |
+          echo "VERSIONS<<EOF" >> $GITHUB_OUTPUT
+          echo "$(npx lerna list -l)" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+        
+      - name: SHOW VERSIONS
+        run: echo "${{ steps.after-versions.outputs.VERSIONS }}"
+          
       - name: They matched!
-        if: ${{steps.random-color-generator2.outputs.SELECTED_COLOR}} == $(npx lerna list -l)
+        if: ${{steps.random-color-generator2.outputs.SELECTED_COLOR}} == ${{steps.after-versions.outputs.VERSIONS}}
         run: echo "THEY MATCHED!"        
         
       - name: They DIDNT match!
-        if: ${{steps.random-color-generator2.outputs.SELECTED_COLOR}} != $(npx lerna list -l)
+        if: ${{steps.random-color-generator2.outputs.SELECTED_COLOR}} != ${{steps.after-versions.outputs.VERSIONS}}
         run: echo "THEY DID NOT MATCH!"        
 
       - name: Publish Stable Release to NPM
