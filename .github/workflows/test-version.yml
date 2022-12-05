@@ -11,32 +11,37 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: thingy
-        id: detect-changes-between-two-branches
-        run: |
-          source_ahead=npx lerna list -l
-          echo "is-source-branch-ahead=$source_ahead" >> $GITHUB_OUTPUT
+#       - name: thingy
+#         id: detect-changes-between-two-branches
+#         run: |
+#           source_ahead=npx lerna list -l
+#           echo "is-source-branch-ahead=$source_ahead" >> $GITHUB_OUTPUT
           
-      - name: echo thingy
-        run: |
-          echo "${{steps.detect-changes-between-two-branches.outputs.is-source-branch-ahead}}"
+#       - name: echo thingy
+#         run: |
+#           echo "${{steps.detect-changes-between-two-branches.outputs.is-source-branch-ahead}}"
           
           
-      - name: Set color
-        id: random-color-generator
-        run: echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT
-      - name: Get color
-        run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
+#       - name: Set color
+#         id: random-color-generator
+#         run: echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT
+#       - name: Get color
+#         run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
         
       - name: Set color MINE
         id: random-color-generator2
         run: |
           echo "SELECTED_COLOR<<EOF" >> $GITHUB_OUTPUT
-          echo "$(npx lerna list)" >> $GITHUB_OUTPUT
+          echo "$(npx lerna list -l)" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
         
-      - name: Get color
-        run: echo "The selected color is ${{ steps.random-color-generator2.outputs.SELECTED_COLOR }}"
+      - name: SHOW VERSIONS
+        run: echo "${{ steps.random-color-generator2.outputs.SELECTED_COLOR }}"
+        
+      - name: They matched!
+        if: steps.random-color-generator2.outputs.SELECTED_COLOR == $(npx lerna list -l)
+        run: echo "THEY MATCHED!"
+        
 
 #       - name: Configure NPM Registry (Artifactory)
 #         run: |
