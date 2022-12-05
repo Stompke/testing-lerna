@@ -14,8 +14,8 @@ jobs:
       - name: thingy
         id: detect-changes-between-two-branches
         run: |
-          source_ahead="stuff here"
-          echo "is-source-branch-ahead=shawn" >> $GITHUB_OUTPUT
+          source_ahead=$(npx lerna list -l)
+          echo "is-source-branch-ahead=$source_ahead" >> $GITHUB_OUTPUT
           
       - name: echo thingy
         run: |
