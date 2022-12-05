@@ -14,10 +14,10 @@ jobs:
         with:
           fetch-depth: 0
           ref: "refs/pull/${{ github.event.number }}/merge"
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version-file: '.nvmrc'
+#           cache: 'npm'
       - id: project-name
         uses: actions-ecosystem/action-regex-match@v2
         with:
