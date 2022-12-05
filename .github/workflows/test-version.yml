@@ -30,7 +30,11 @@ jobs:
         
       - name: Set color MINE
         id: random-color-generator2
-        run: echo "SELECTED_COLOR=$(npx lerna list)" >> $GITHUB_OUTPUT
+        run: |
+          echo "SELECTED_COLOR<<EOF" >> $GITHUB_OUTPUT
+          echo "$(npx lerna list)" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+        
       - name: Get color
         run: echo "The selected color is ${{ steps.random-color-generator2.outputs.SELECTED_COLOR }}"
 
