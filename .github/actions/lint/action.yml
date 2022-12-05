@@ -10,10 +10,18 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: print inputs.project
+      run: |
+        echo "${{ inputs.project }}"
+      shell: bash
     - uses: ./.github/actions/get-affected
       id: get_affected
       with:
         project: ${{ inputs.project }}
+    - name: print ${{ steps.get_affected.outputs.affectedDeps }}
+      run: |
+        echo "${{ steps.get_affected.outputs.affectedDeps }}"
+      shell: bash
     - if: ${{steps.get_affected.outputs.isAffected == 'true'}}
       run: |
         npx nx run-many --target=lint --projects=${{ steps.get_affected.outputs.affectedDeps }}
