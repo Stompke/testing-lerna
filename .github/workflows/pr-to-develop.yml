@@ -1,0 +1,37 @@
+name: Pull Request to develop
+
+on:
+  pull_request_target:
+    branches:
+      - develop
+
+jobs:
+  pull-request-to-develop:
+    name: Pull Request to Develop
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: "refs/pull/${{ github.event.number }}/merge"
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+      - id: project-name
+        uses: actions-ecosystem/action-regex-match@v2
+        with:
+          text: ${{ github.event.pull_request.title }}
+          regex: '^[a-z]+\(([a-zA-Z\-]+)\):.+$'
+      - name: Get Affected Changed and Lint
+        if: ${{ steps.project-name.outputs.group1 != '' }}
+        id: lint
+        uses: ./.github/actions/lint
+        with:
+          project: ${{ steps.project-name.outputs.group1 }}
+      - name: Get Affected Changed and Test
+        if: ${{ steps.project-name.outputs.group1 != '' }}
+        id: unit-test
+        uses: ./.github/actions/unit-test
+        with:
+          project: ${{ steps.project-name.outputs.group1 }}
