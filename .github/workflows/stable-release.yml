@@ -37,15 +37,15 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           
           
-      - name: Set version history
-        id: random-color-generator2
+      - name: Pre Lerna Version
+        id: before-versions
         run: |
-          echo "SELECTED_COLOR<<EOF" >> $GITHUB_OUTPUT
+          echo "VERSION<<EOF" >> $GITHUB_OUTPUT
           echo "$(npx lerna list -l)" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
         
-      - name: SHOW VERSIONS
-        run: echo "${{ steps.random-color-generator2.outputs.SELECTED_COLOR }}"
+      - name: Show Before Versions
+        run: echo "${{ steps.before-versions.outputs.VERSION }}"
           
       - name: Create Release Tag
         run: |
@@ -56,23 +56,23 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{secrets.GIT_TOKEN}}
           
-      - name: Set after version history
+      - name: After Lerna Version
         id: after-versions
         run: |
-          echo "VERSIONS<<EOF" >> $GITHUB_OUTPUT
+          echo "VERSION<<EOF" >> $GITHUB_OUTPUT
           echo "$(npx lerna list -l)" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
         
       - name: SHOW VERSIONS
-        run: echo "${{ steps.after-versions.outputs.VERSIONS }}"
+        run: echo "${{ steps.after-versions.outputs.VERSION }}"
           
-      - name: They matched!
-        if: ${{steps.random-color-generator2.outputs.SELECTED_COLOR == steps.after-versions.outputs.VERSIONS}}
+      - name: Versions Matched
+        if: ${{steps.before-versions.outputs.VERSION == steps.after-versions.outputs.VERSION}}
         run: echo "THEY MATCHED!"        
         
-      - name: They DIDNT match!
-        if: ${{steps.random-color-generator2.outputs.SELECTED_COLOR != steps.after-versions.outputs.VERSIONS}}
-        run: echo "THEY DID NOT MATCH!"        
+      - name: Versions Didnt Match
+        if: ${{steps.before-versions.outputs.VERSION != steps.after-versions.outputs.VERSION}}
+        run: echo "THEY DID NOT MATCH!"
 
       - name: Publish Stable Release to NPM
         run: |
