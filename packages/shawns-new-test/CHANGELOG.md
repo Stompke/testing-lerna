@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [9.4.1](https://github.com/Stompke/testing-lerna/compare/v9.4.0...v9.4.1) (2022-12-06)
+
+
+### Bug Fixes
+
+* **ci:** and some more stuff ([f0f11fd](https://github.com/Stompke/testing-lerna/commit/f0f11fd53c804cbef656284f00348c6063ce8bd8))
+
+
+
+
+
 # [9.4.0](https://github.com/Stompke/testing-lerna/compare/v9.3.0...v9.4.0) (2022-12-05)
 
 
