@@ -37,6 +37,16 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           
           
+      - id: project-name
+        uses: actions-ecosystem/action-regex-match@v2
+        with:
+          text: ${{ github.event.pull_request.title }}
+          regex: '^[a-z]+\(([a-zA-Z\-]+)\):.+$'
+          
+      - name: show project name
+        run: |
+          echo ${{ steps.project-name.outputs.group1 }}
+          
       - name: Pre Lerna Version
         id: before-versions
         run: |
